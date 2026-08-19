@@ -1,0 +1,24 @@
+# Canonical `type` values a modules.yaml entry may use.
+# Keep this list in sync with docs/schema.md — the validator checks entries
+# against it.
+
+types:
+  - id: firmware
+    label: Firmware
+    description: Source code that runs on the module's own hardware.
+
+  - id: hardware
+    label: Hardware
+    description: PCB files, schematics, BOM, or other open hardware design files.
+
+  - id: sdk
+    label: SDK
+    description: Developer libraries, plugin APIs, DSP frameworks, or flashing/dev tools.
+
+  - id: alternative-firmware
+    label: Alternative Firmware
+    description: Community or experimental firmware for existing hardware.
+
+  - id: platform
+    label: Platform
+    description: A module or board designed to be programmed/extended by users.

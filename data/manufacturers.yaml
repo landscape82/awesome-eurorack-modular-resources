@@ -1,0 +1,20 @@
+# Manufacturers/projects referenced in modules.yaml.
+# `homepage` is optional and left blank where not independently verified —
+# add it via PR rather than guessing at a URL.
+
+manufacturers:
+  - name: Mutable Instruments
+  - name: 4ms
+  - name: Winterbloom
+  - name: Music Thing Modular
+  - name: Ornament & Crime
+  - name: Expert Sleepers
+  - name: Allen Synthesis
+  - name: CTAG
+  - name: Tiliqua
+  - name: Befaco
+  - name: ALM Busy Circuits
+  - name: Intellijel
+  - name: Michigan Synth Works
+  - name: Noise Engineering
+  - name: Westlicht

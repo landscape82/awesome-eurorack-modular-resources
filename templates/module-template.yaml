@@ -1,0 +1,32 @@
+# Copy this block into data/modules.yaml (append to the `modules:` list).
+# Delete any optional keys you don't have information for — do not leave
+# placeholder values in a submitted PR.
+
+  - manufacturer: ""            # required — e.g. "Mutable Instruments"
+    module: ""                  # required — e.g. "Plaits"
+    repository: ""              # required — full https:// GitHub (or other VCS) URL
+    description: ""             # recommended — one sentence, what it does
+    type:                       # required — one or more of: firmware, hardware, sdk,
+      - firmware                #   alternative-firmware, platform (see data/tags.yaml)
+    platform:                   # recommended
+      cpu:
+        - ""                    # e.g. STM32, Teensy, RP2040, ESP32, FPGA
+      language:
+        - ""                    # e.g. C++, Rust, Python, MicroPython
+    build:                      # recommended
+      supported: true
+      system:
+        - ""                    # e.g. make, cmake, platformio
+    flash:                      # recommended
+      supported: true
+      method:
+        - ""                    # e.g. "USB bootloader", "ST-Link", "DFU"
+    hardware:                   # recommended, only if `type` includes hardware
+      available: true
+    license:                    # recommended
+      software: ""              # SPDX identifier, e.g. MIT, GPL-3.0
+    status:                     # recommended
+      maintained: true          # true | false | "community"
+    links:                      # optional
+      documentation:
+        - ""

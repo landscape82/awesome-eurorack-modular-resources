@@ -1,0 +1,346 @@
+# Awesome Eurorack Code database
+# Source of truth for indexed projects
+
+schema_version: 1
+
+modules:
+
+  - manufacturer: Mutable Instruments
+    module: Plaits
+    repository: https://github.com/pichenettes/eurorack
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - STM32
+      language:
+        - C++
+    build:
+      supported: true
+    flash:
+      supported: true
+    status:
+      maintained: community
+
+  - manufacturer: Mutable Instruments
+    module: Clouds
+    repository: https://github.com/pichenettes/eurorack
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - STM32
+      language:
+        - C++
+    status:
+      maintained: community
+
+  - manufacturer: Mutable Instruments
+    module: Rings
+    repository: https://github.com/pichenettes/eurorack
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - STM32
+      language:
+        - C++
+    status:
+      maintained: community
+
+  - manufacturer: Mutable Instruments
+    module: Braids
+    repository: https://github.com/pichenettes/eurorack
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - STM32
+      language:
+        - C++
+    status:
+      maintained: community
+
+  - manufacturer: Mutable Instruments
+    module: Marbles
+    repository: https://github.com/pichenettes/eurorack
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - STM32
+      language:
+        - C++
+    status:
+      maintained: community
+
+  - manufacturer: Mutable Instruments
+    module: Stages
+    repository: https://github.com/pichenettes/eurorack
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - STM32
+      language:
+        - C++
+    status:
+      maintained: community
+
+  - manufacturer: 4ms
+    module: MetaModule
+    repository: https://github.com/4ms/metamodule
+    type:
+      - firmware
+      - platform
+    platform:
+      language:
+        - C++
+    status:
+      maintained: true
+
+  - manufacturer: 4ms
+    module: Ensemble Oscillator
+    repository: https://github.com/4ms/enosc
+    type:
+      - firmware
+    platform:
+      cpu:
+        - STM32
+      language:
+        - C++
+    status:
+      maintained: true
+
+  - manufacturer: 4ms
+    module: Dual Looping Delay
+    repository: https://github.com/4ms/DLD
+    description: Firmware for the Dual Looping Delay module.
+    type:
+      - firmware
+    status:
+      maintained: true
+
+  - manufacturer: 4ms
+    module: Stereo Triggered Sampler
+    repository: https://github.com/4ms/STS
+    description: Firmware for the Stereo Triggered Sampler module.
+    type:
+      - firmware
+    status:
+      maintained: true
+
+  - manufacturer: Winterbloom
+    module: Castor & Pollux
+    repository: https://github.com/wntrblm/Castor_and_Pollux
+    type:
+      - firmware
+      - hardware
+    platform:
+      language:
+        - C++
+    status:
+      maintained: true
+
+  - manufacturer: Winterbloom
+    module: Big Honking Button
+    repository: https://github.com/wntrblm/Big_Honking_Button
+    description: A simple Eurorack sampler and performance module.
+    type:
+      - firmware
+      - hardware
+    status:
+      maintained: true
+
+  - manufacturer: Music Thing Modular
+    module: Radio Music
+    repository: https://github.com/TomWhitwell/RadioMusic
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - Teensy
+      language:
+        - C++
+    status:
+      maintained: community
+
+  - manufacturer: Music Thing Modular
+    module: Workshop Computer
+    repository: https://github.com/TomWhitwell/Workshop_Computer
+    description: Code and examples for the Music Thing Modular Workshop Computer.
+    type:
+      - firmware
+      - hardware
+      - platform
+    status:
+      maintained: community
+
+  - manufacturer: Ornament & Crime
+    module: Original Firmware
+    repository: https://github.com/mxmxmx/O_C
+    type:
+      - firmware
+      - hardware
+    platform:
+      cpu:
+        - Teensy
+      language:
+        - C++
+    status:
+      maintained: community
+
+  - manufacturer: Ornament & Crime
+    module: Phazerville
+    repository: https://github.com/djphazer/O_C-Phazerville
+    type:
+      - alternative-firmware
+    platform:
+      cpu:
+        - Teensy
+      language:
+        - C++
+    status:
+      maintained: true
+
+  - manufacturer: Expert Sleepers
+    module: disting NT API
+    repository: https://github.com/expertsleepersltd/distingNT_API
+    type:
+      - sdk
+    platform:
+      language:
+        - C++
+    status:
+      maintained: true
+
+  - manufacturer: Allen Synthesis
+    module: EuroPi
+    repository: https://github.com/Allen-Synthesis/EuroPi
+    type:
+      - firmware
+      - platform
+      - hardware
+    platform:
+      cpu:
+        - RP2040
+      language:
+        - MicroPython
+    status:
+      maintained: true
+
+  - manufacturer: CTAG
+    module: Toolkit
+    repository: https://github.com/ctag-fh-kiel
+    type:
+      - platform
+    platform:
+      cpu:
+        - ESP32
+      language:
+        - C++
+    status:
+      maintained: true
+
+  - manufacturer: Tiliqua
+    module: Tiliqua Platform
+    repository: https://github.com/apfaudio/tiliqua
+    type:
+      - platform
+      - hardware
+    platform:
+      cpu:
+        - FPGA
+      language:
+        - Python
+        - SystemVerilog
+    status:
+      maintained: true
+
+  # --- Recovered from the pre-catalogue README (dropped in an earlier rewrite) ---
+
+  - manufacturer: 4ms
+    module: SMR
+    repository: https://github.com/4ms/SMR
+    description: Firmware for the 4ms Spectral Multiband Resonator (6-channel resonant filter module).
+    type:
+      - firmware
+
+  - manufacturer: Befaco
+    module: Noise Plethora
+    repository: https://github.com/Befaco/Noise_plethora
+    description: Firmware for the three-channel digital noise generator with analog filters.
+    type:
+      - firmware
+
+  - manufacturer: Befaco
+    module: VCMC
+    repository: https://github.com/Befaco/VCMC
+    description: Firmware for the Voltage Controlled MIDI Controller (VCMC), also used in CV Thing.
+    type:
+      - firmware
+
+  - manufacturer: ALM Busy Circuits
+    module: ALM Firmware Updater
+    repository: https://github.com/busycircuits/alm-fw-updater
+    description: Cross-platform GUI tool for updating firmware of ALM Eurorack modules (e.g. ALM017).
+    type:
+      - sdk
+
+  - manufacturer: Expert Sleepers
+    module: Disting
+    repository: https://github.com/expertsleepersltd/disting
+    description: Firmware for the Disting multi-function module (CV/audio utilities, effects, etc.).
+    type:
+      - firmware
+
+  - manufacturer: Expert Sleepers
+    module: Disting EX
+    repository: https://github.com/expertsleepersltd/distingEX
+    description: Firmware framework for the enhanced Disting EX, supporting user-defined DSP algorithms.
+    type:
+      - firmware
+
+  - manufacturer: Intellijel
+    module: Firmware Updater
+    repository: https://github.com/intellijel/firmware
+    description: Web-based firmware updater for Intellijel Eurorack modules via browser.
+    type:
+      - sdk
+
+  - manufacturer: Michigan Synth Works
+    module: Synth Projects
+    repository: https://github.com/MichiganSynthWorks/Synths
+    description: Reworks of Mutable Instruments and other synth hardware (e.g. Bella, MIDIme).
+    type:
+      - hardware
+
+  - manufacturer: Noise Engineering
+    module: Curiositas
+    repository: https://github.com/noiseeng/curiositas
+    description: Source code for legacy modules like Ataraxic, Confundo Funkitus, and Variatic Eruption.
+    type:
+      - firmware
+
+  - manufacturer: Westlicht
+    module: Performer
+    repository: https://github.com/westlicht/performer
+    description: Firmware for the Performer step sequencer module designed for live and studio use.
+    type:
+      - firmware
+      - hardware
+
+  - manufacturer: Winterbloom
+    module: Sol
+    repository: https://github.com/wntrblm/Sol
+    description: CircuitPython firmware for a USB MIDI-to-CV Eurorack module with open hardware design.
+    type:
+      - firmware
+      - hardware

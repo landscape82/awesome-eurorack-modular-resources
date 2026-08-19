@@ -1,0 +1,56 @@
+name: New module
+description: Suggest a module/project to add to the catalogue
+title: "[new module]: "
+labels: ["new-module"]
+body:
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+    validations:
+      required: true
+
+  - type: input
+    id: module
+    attributes:
+      label: Module name
+    validations:
+      required: true
+
+  - type: input
+    id: repository
+    attributes:
+      label: Repository URL
+    validations:
+      required: true
+
+  - type: dropdown
+    id: firmware
+    attributes:
+      label: Firmware available?
+      options: ["Yes", "No"]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Hardware files available?
+      options: ["Yes", "No"]
+    validations:
+      required: true
+
+  - type: input
+    id: cpu
+    attributes:
+      label: CPU (e.g. STM32, Teensy, RP2040, ESP32, FPGA)
+
+  - type: input
+    id: language
+    attributes:
+      label: Programming language
+
+  - type: input
+    id: license
+    attributes:
+      label: License (SPDX identifier, e.g. MIT, GPL-3.0)
