@@ -2,11 +2,6 @@ name: Validate
 
 on:
   pull_request:
-    paths:
-      - "data/**"
-      - "scripts/**"
-      - "README.md"
-      - ".github/workflows/validate.yml"
   push:
     branches: [main]
     paths:
@@ -18,15 +13,39 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # `validate` is a required status check, so it must always report a
+      # status even on PRs that don't touch data/scripts/README — otherwise
+      # branch protection waits forever for a check that never runs.
+      # See https://github.com/landscape82/awesome-eurorack-modular-resources/pull/11
+      - name: Check for relevant changes
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "relevant=true" >> "$GITHUB_OUTPUT"
+          else
+            git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" > changed_files.txt
+            if grep -qE '^(data/|scripts/|README\.md$|\.github/workflows/validate\.yml$)' changed_files.txt; then
+              echo "relevant=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "relevant=false" >> "$GITHUB_OUTPUT"
+            fi
+          fi
 
       - uses: actions/setup-python@v7
+        if: steps.changes.outputs.relevant == 'true'
         with:
           python-version: "3.12"
 
       - run: pip install -r requirements.txt
+        if: steps.changes.outputs.relevant == 'true'
 
       - name: Validate modules.yaml
+        if: steps.changes.outputs.relevant == 'true'
         run: python3 scripts/validate_modules.py
 
       - name: Check README.md is up to date
+        if: steps.changes.outputs.relevant == 'true'
         run: python3 scripts/generate_readme.py --check
