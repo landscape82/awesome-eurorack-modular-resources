@@ -20,6 +20,11 @@ def load_valid_types() -> set[str]:
     return {t["id"] for t in tags["types"]}
 
 
+def load_known_manufacturers() -> set[str]:
+    data = yaml.safe_load((ROOT / "data" / "manufacturers.yaml").read_text())
+    return {m["name"] for m in data["manufacturers"]}
+
+
 def validate() -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -27,6 +32,7 @@ def validate() -> tuple[list[str], list[str]]:
     data = yaml.safe_load((ROOT / "data" / "modules.yaml").read_text())
     modules = data.get("modules", [])
     valid_types = load_valid_types()
+    known_manufacturers = load_known_manufacturers()
 
     for i, m in enumerate(modules):
         label = f"modules[{i}] ({m.get('manufacturer', '?')} / {m.get('module', '?')})"
@@ -34,6 +40,13 @@ def validate() -> tuple[list[str], list[str]]:
         for field in REQUIRED:
             if not m.get(field):
                 errors.append(f"{label}: missing required field '{field}'")
+
+        manufacturer = m.get("manufacturer")
+        if manufacturer and manufacturer not in known_manufacturers:
+            errors.append(
+                f"{label}: manufacturer '{manufacturer}' not found in data/manufacturers.yaml "
+                "(add it there, or fix a naming mismatch)"
+            )
 
         for field in RECOMMENDED:
             if not m.get(field):
